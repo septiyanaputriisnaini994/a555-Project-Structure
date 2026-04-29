@@ -52,9 +52,9 @@ def create_bystate_df(df):
 
 def create_rfm_df(df):
     rfm_df = df.groupby(by="customer_id", as_index=False).agg({
-        "order_date": "max", #mengambil tanggal order terakhir
-        "order_id": "nunique",
-        "total_price": "sum"
+    "order_date": "max", #mengambil tanggal order terakhir
+    "order_id": "nunique",
+    "total_price": "sum"
     })
     rfm_df.columns = ["customer_id", "max_order_timestamp", "frequency", "monetary"]
     
